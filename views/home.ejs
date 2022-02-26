@@ -1,12 +1,14 @@
 <%-  include("partials/header") -%>
-    
     <% articles.forEach(article => { %>
         <h1>
             <%=article.title%>
         </h1>
         <p>
-            <%= _.truncate(article.content, {"length": 100, "omission": '...'}) %>
+            <%= lodash.truncate(article.content, {"length": 100, "omission": '...'}) %>
             <a href="/articles/<%=article._id%>">Read More</a>
+        </p>
+        <p>
+            <%=article.author%>
         </p>
     <% }); %> 
 <%- include("partials/footer") -%> 

@@ -9,7 +9,6 @@ const app = express();
 app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
 
 async function main() {
     await mongoose.connect("mongodb://localhost:27017/blogDB", {useNewUrlParser: true});
@@ -38,9 +37,14 @@ app.get("/", (req, res) => {
     });
 });
 
+app.get("/create", (req, res) => {
+    res.render("compose");
+})
+
 // Single article
 app.get("/articles/:articleId", (req, res) => {
-    const requestedArticleId = req.params.ArticleId;
+    const requestedArticleId = req.params.articleId;
+
     Article.findById(requestedArticleId, (err, foundArticle) => {
         if(!err) {
             res.render("article", {
@@ -55,18 +59,16 @@ app.get("/articles/:articleId", (req, res) => {
             });
         }
     });
-})
+});
 
 // Create post
-app.post("/", (req, res) => {
-    const compostArticle = {
+app.post("/create", (req, res) => {
+    const composeArticle = new Article ({
         title: req.body.composeTitle,
-        text: req.body.composeText
-    };
-    Article.create(compostArticle, (err, article) => {
-        if (err) return handleError(err);
-    }) 
-    res.redirect("/");
+        content: req.body.composeContent,
+        author: req.body.author
+    });
+    composeArticle.save(() => res.redirect("/"));
 })
 
 app.listen(process.env.PORT||3000, function(){
