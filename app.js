@@ -59,11 +59,11 @@ app.get("/articles/:articleId", (req, res) => {
 
 // Create post
 app.post("/", (req, res) => {
-    const composePost ={
+    const compostArticle = {
         title: req.body.composeTitle,
         text: req.body.composeText
     };
-    Article.create({}, (err, article) => {
+    Article.create(compostArticle, (err, article) => {
         if (err) return handleError(err);
     }) 
     res.redirect("/");
