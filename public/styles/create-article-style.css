@@ -1,0 +1,19 @@
+.body {
+    border-bottom: 0px solid black;
+    display:block;
+    margin: 40px;
+}
+
+input {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+input,textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+input[type="text] {
+    
+
