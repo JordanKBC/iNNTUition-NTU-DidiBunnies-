@@ -134,3 +134,76 @@ footer {
 
 
 
+
+
+/*Publishing Page*/
+
+.publish-body {
+    border-bottom: 0px solid black;
+    display:block;
+    margin: 40px;
+    padding: 40px;
+    padding-top: 80px;
+}
+
+h1.publish {
+    border-bottom: 3px double black;
+}
+
+input, textarea {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+input,textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+label {
+    font-size: 2.5rem;
+}
+
+form {
+  clear: both;
+}
+
+form input {
+  width: 100%;
+  clear: both;
+}
+
+.title {
+    margin-bottom:30px;
+}
+
+textarea {
+    width: 100%;
+    height: 500px;
+    border: 1px solid black;
+}
+
+.submit {
+    display:flex;
+    justify-content:center;
+    margin-top: 10px;
+}
+
+button[type="submit"] {
+    background-color: forestgreen;
+    border: none;
+    color:white;
+    padding:15px 25px;
+    font-size: 1.4rem;
+    font-family: "Garamond", "Times New Roman", Serif;
+    border-radius: 15px;
+}
+
+/*Contact Us Page*/
+.contact-header-main {
+    display: flex;
+    
+}
+
+/*Article Page*/
+

@@ -65,7 +65,7 @@ app.get("/articles/:articleId", (req, res) => {
 // Create post
 app.post("/create", (req, res) => {
     const composeArticle = new Article ({
-        title: req.body.composeTitle,
+        title: lodash.upperFirst(req.body.composeTitle),
         content: req.body.composeContent,
         author: req.body.author
     });

@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../public/styles/homepage-styles.css" />
-    <link rel="stylesheet" href="../public/styles/create-article-style.css" />
     <title>The Bugle</title>
   </head>
   <body>
@@ -22,8 +21,9 @@
         <div class="register">Contact Us</div>
       </div>
     </div>
-    <div class="body">
-        <h1>Publish</h1>
+    
+    <div class="publish-body">
+        <h1 class="publish">Publish</h1>
         <form action="" method="post">
           <div class="title">
             <label for="user_title">Title:</label>
@@ -32,6 +32,9 @@
           <div class="content">
             <label for="user_content">Content:</label>
             <textarea type="text" id="user_content" name="user_content"></textarea>
+          </div>
+          <div class="submit">
+            <button type="submit">Publish</button>
           </div>
         </form>
     </div>

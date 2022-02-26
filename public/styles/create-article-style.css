@@ -40,6 +40,23 @@ form input {
 textarea {
     width: 100%;
     height: 500px;
+    border: 1px solid black;
+}
+
+.submit {
+    display:flex;
+    justify-content:center;
+    margin-top: 10px;
+}
+
+button {
+    background-color: forestgreen;
+    border: none;
+    color:white;
+    padding:15px 25px;
+    font-size: 1.4rem;
+    font-family: "Garamond", "Times New Roman", Serif;
+    border-radius: 15px;
 }
 
 

@@ -1,14 +1,35 @@
 <%-  include("partials/header") -%>
-    <% articles.forEach(article => { %>
-        <h1>
-            <%=article.title%>
-        </h1>
-        <p>
-            <%= lodash.truncate(article.content, {"length": 100, "omission": '...'}) %>
-            <a href="/articles/<%=article._id%>">Read More</a>
-        </p>
-        <p>
-            <%=article.author%>
-        </p>
-    <% }); %> 
+<div class="body">
+    <div class="body-left">
+      <div class="summary">
+        <h2>Create Your Story</h2>
+        <div class="background">
+          The first step begins here. The Bugle is a blog where all
+          perspectives and views are accepted.
+        </div>
+      </div>
+      <button class="register-button"><a href="/create">Start Writing</a></button>
+    </div>
+    <div class="body-right">
+        <div class="graphic">
+            <img class="graphic" src="img/writing.svg" alt="graphic-1" />
+        </div>
+    </div>
+</div>
+<h2 id="feed">Feed</h2>
+    <div class="scroll-panel">
+        <% articles.forEach(article => { %>
+        <div class="panel">
+            <div class="panel-left">
+            <div class="panel-username"><%=article.title%></div>
+            <div class="panel-title">
+                <%= lodash.truncate(article.content, {"length": 100, "omission": '...'}) %>
+                <a href="/articles/<%=article._id%>">Read More</a></div>
+            </div>
+            <div class="panel-right">
+                <img class="panel-logo" src="img/logo.svg" />
+            </div>
+        </div>
+        <% }); %> 
+    </div>
 <%- include("partials/footer") -%> 
