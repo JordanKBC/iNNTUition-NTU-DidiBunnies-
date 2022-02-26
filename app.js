@@ -29,7 +29,8 @@ app.get("/", (req, res) => {
     Article.find({}, (err, foundArticles) => {
         if(!err) {
             res.render("home", {
-                articles: foundArticles
+                articles: foundArticles,
+                lodash: lodash
             });
         } else {
             console.log(err);
